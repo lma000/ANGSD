@@ -13,4 +13,4 @@
 
 mamba activate angsd
 
-fastqc -o fastqc */*fastq.gz
+fastqc -o fastqc trimmed/*/*fq.gz
