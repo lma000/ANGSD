@@ -15,10 +15,10 @@ mamba activate angsd
 
 for folder in $(cat conditions); do 
 mkdir -p alignments/$folder
-for file1 in $folder/*_1.fastq.gz; do
-file2=${file1/_1/_2}
+for file1 in $folder/*_1.fq.gz; do
+file2=${file1/_1_val_1/_2_val_2}
     
-STAR --runMode alignReads --runThreadN 10 --genomeDir /athena/angsd/scratch/lim4019/project2/index/index --readFilesIn $file1 $file2 --readFilesCommand zcat --outFileNamePrefix alignments/${file1%%_1.fastq.gz}. --outSAMtype BAM SortedByCoordinate --outSAMattributes MD
+STAR --runMode alignReads --runThreadN 10 --genomeDir /athena/angsd/scratch/lim4019/project2/index/index --readFilesIn $file1 $file2 --readFilesCommand zcat --outFileNamePrefix alignments/${file1%%_1_val_1.fq.gz}. --outSAMtype BAM SortedByCoordinate --outSAMattributes MD
 
 done
 done
