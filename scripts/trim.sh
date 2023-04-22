@@ -13,7 +13,12 @@
 
 mamba activate trim-galore
 
-for folder in $(cat conditions); do
-mkdir trimmed/$folder
-trim_galore --cores 8 --o trimmed/$folder --paired --illumina --stringency 4 $folder/*_1.fastq.gz $folder/*_2.fastq.gz
+for folder in $(cat conditions); do 
+mkdir -p trimmed/$folder
+for file1 in $folder/*_1.fastq.gz; do
+file2=${file1/_1/_2}
+    
+trim_galore --cores 8 --o trimmed/$folder --paired --illumina --stringency 4 $file1 $file2
+
+done
 done
