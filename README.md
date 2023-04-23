@@ -2,6 +2,10 @@
 
 Files for the ANGSD final project. 
 
+Final Report: 
+- `final.html` is the compiled version of the final report, detailing the methods and results. 
+- `final.Rmd` is the interactive R Markdown file used to generate the report, with executable code. 
+
 Files: 
 - `tsv` is a metadata file that contains information about RNA-seq runs from this [GEO dataset](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE198063), presented in the paper [Translatome profiling in fatal familial insomnia implicates TOR signaling in somatostatin neurons](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9531780) by Bauer et. al. (2022). 
 - `conditions` is a file with 3 lines, each corresponding to a relevant genotype: Control, FFI, and CJD. This file is used as input for a number of the scripts to sepearate conditions into different folders or files. 
